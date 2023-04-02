@@ -1,0 +1,32 @@
+body {
+	margin: 0;
+}
+
+input {
+	width: 100%;
+}
+
+.docset-parent {
+	width: 100%;
+}
+
+#docset-page {
+	border: solid;
+	flex-grow: 4;
+	max-height: 100vh;
+}
+
+#header {
+	display: none;
+	text-align: center;
+}
+
+#main-body {
+	display: flex;
+	height: 100vh;
+}
+
+#searchbar {
+	border: solid;
+	display: inline-block;
+}
