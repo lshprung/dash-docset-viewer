@@ -1,6 +1,7 @@
 import http.server
 
 from config import *
+from endpoints.get_plist import *
 
 class MyServer(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
@@ -9,7 +10,7 @@ class MyServer(http.server.BaseHTTPRequestHandler):
         self.send_header("Access-Control-Allow-Origin", "*")
         self.send_header("Access-Control-Allow-Headers", "content-type")
         self.end_headers()
-        output = exec(open("." + self.path).read())
+        output = Get_Plist.main()
         self.wfile.write(output.encode())
 
 
