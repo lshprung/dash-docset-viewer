@@ -2,8 +2,10 @@ import json
 import logging
 import os
 import plistlib
+import sys
 
-from ..config import Config
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
+from config import Config
 
 output = dict()
 output["paths"] = []
@@ -11,13 +13,13 @@ output["paths"] = []
 def find_plist(path):
     with os.scandir(path) as it:
         for entry in it:
-            if entry.name == "." or entry.name == "..":
+            if entry.name == "." or entry.name == ".." or entry.name == "Resources":
                 continue
             if(os.DirEntry.is_dir(entry)):
                 find_plist(path + "/" + entry.name)
             elif(entry.name == "Info.plist"):
                 #parse_plist(path + "/" + entry.name)
-                output["paths"] += path + "/" + entry.name
+                output["paths"].append(path + "/" + entry.name)
 
 def parse_plist(path):
     with open(path, "rb") as fp:
