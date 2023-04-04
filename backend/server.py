@@ -9,10 +9,10 @@ class MyServer(http.server.BaseHTTPRequestHandler):
         self.send_header("Content-type", "application/json")
         self.send_header("Access-Control-Allow-Origin", "*")
         self.send_header("Access-Control-Allow-Headers", "content-type")
+        
         self.end_headers()
         output = Get_Plist.main()
         self.wfile.write(output.encode())
-
 
 if __name__ == "__main__":
     webServer = http.server.HTTPServer((Config.hostName, Config.serverPort), MyServer)

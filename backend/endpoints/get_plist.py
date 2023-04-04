@@ -9,8 +9,6 @@ from config import Config
 
 class Get_Plist:
     output = dict()
-    output["docsets"] = []
-
 
     def find_plist(path):
         with os.scandir(path) as it:
@@ -46,6 +44,8 @@ class Get_Plist:
 
 
     def main():
+        Get_Plist.output["docsets"] = []
+
         if not os.path.isdir(Config.docset_base):
             e = "Invalid DOCSET_BASE \"" + Config.docset_base + "\""
             logging.error(e);
