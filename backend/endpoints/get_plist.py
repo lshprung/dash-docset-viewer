@@ -19,7 +19,7 @@ class Get_Plist:
                 plist_path = os.path.join(docset_root, "Contents", "Info.plist")
                 if(os.path.isfile(plist_path)):
                     if(Get_Plist.parse_plist(plist_path)):
-                        Get_Plist.output["docsets"][-1]["plist_path"] = plist_path
+                        Get_Plist.output["docsets"][-1]["docset_root"] = docset_root
                         for f in ["icon.png", "icon@2x.png"]:
                             if os.path.isfile(os.path.join(docset_root, f)):
                                 Get_Plist.output["docsets"][-1][f] = os.path.join(docset_root, f)
