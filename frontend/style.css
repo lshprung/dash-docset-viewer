@@ -11,9 +11,13 @@ input {
 }
 
 #docset-page {
-	border: solid;
+	border-left: solid;
 	flex-grow: 4;
 	max-height: 100vh;
+}
+
+#docset-table {
+	border-top: solid;
 }
 
 #header {
@@ -23,10 +27,14 @@ input {
 
 #main-body {
 	display: flex;
-	height: 100vh;
 }
 
 #searchbar {
-	border: solid;
-	display: inline-block;
+	max-width: 20vw;
+}
+
+#sidebar {
+	border-right: solid;
+	display: inline-grid;
+	height: 100vh;
 }
