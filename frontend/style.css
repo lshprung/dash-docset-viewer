@@ -18,6 +18,7 @@ input {
 
 #docset-table {
 	border-top: solid;
+	width: 100%;
 }
 
 #header {
@@ -35,6 +36,6 @@ input {
 
 #sidebar {
 	border-right: solid;
-	display: inline-grid;
 	height: 100vh;
+	overflow: scroll;
 }
